@@ -1,0 +1,31 @@
+{
+  "name": "yiff",
+  "version": "0.0.1",
+  "description": "API Wrapper for various Furry Image APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codepupper/yiff.git"
+  },
+  "keywords": [
+    "yiff",
+    "api",
+    "image",
+    "discord",
+    "e621",
+    "e926",
+    "wrapper"
+  ],
+  "author": "codepupper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codepupper/yiff/issues"
+  },
+  "homepage": "https://github.com/codepupper/yiff#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
