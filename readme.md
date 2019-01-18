@@ -6,6 +6,8 @@
 - [x] e926
 - [ ] furry.bot
 - [ ] sheri.fun
+- [ ] randomfox.ca
+- [ ] shibe.online
 
 ## e621
 
@@ -57,15 +59,15 @@ yiff.e621.CubFilter('kihu wolf abs') // This will filter out Cub, thus letting y
 
 Both are technically the same, .CubFilter() just lets you automatically filter out Cubs if you so choose
 
-# Contributing & Issues
+## Contributing & Issues
 
 Feel free to make a Pull request and fix some things, otherwise just open a Issue to let me know!
 
-# Crediting
+## Crediting
 
 Please do not remove my Signature from the Code, other than that you can do with  this whatever you want!~
 
-# FAQ
+## FAQ
 
 > **Q:** Will you add other APIs as well?\
 > **A:** Depends on if they're either free or I get a all-access token\
