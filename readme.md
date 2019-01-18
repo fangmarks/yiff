@@ -70,4 +70,4 @@ Please do not remove my Signature from the Code, other than that you can do with
 ## FAQ
 
 > **Q:** Will you add other APIs as well?\
-> **A:** Depends on if they're either free or I get a all-access token\
+> **A:** Depends on if they're either free or I get a all-access token
