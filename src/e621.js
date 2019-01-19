@@ -40,9 +40,14 @@ CubFilter: async function(request){
          fav_count: fav_count, 
          image: file_url, 
          artist: artist, 
-         postID: id}
+         postID: id
+        }
    
     return data
 
     }
 }
+
+/*
+    API Wrapper written by codepupper
+*/

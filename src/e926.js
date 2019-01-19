@@ -10,9 +10,20 @@ module.exports = async = {
     let url = `https://e926.net/post/index.json?tags=${request}%20order:random&limit=1`
     let response = await axios.get(url)
     let {tags, source, score, fav_count, file_url, artist, id} = response.data[0]
-    let data = {tags: tags, source: source, score: score, fav_count: fav_count, image: file_url, artist: artist, postID: id}
-   
+    let data = {
+        tags: tags,
+        source: source,
+        score: score, 
+        fav_count: fav_count, 
+        image: file_url, 
+        artist: artist, 
+        postID: id
+       }
     return data
 
     }
 }
+
+/*
+    API Wrapper written by codepupper
+*/
