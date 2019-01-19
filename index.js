@@ -1,13 +1,22 @@
+/*
+    API Wrapper written by codepupper
+*/
+
+
 module.exports = async = {
 
     e621: require('./src/e621'),
     e926: require('./src/e926') ,
+    furrybot: require('./src/furrybot'),
 
-    // Coming Soon: 
+
+
+   /* Coming Soon: 
     
-    // furrybot: require('./src/furrybot'),
-    // sheri: require('./src/sheri'),
-    // center: require('./src/center')
-
+     sheri: require('./src/sheri'),
+     shibe: require('./src/shibe')
+     fox: require('./src/fox')
+     center: require('./src/center')
+     */
 
 }
