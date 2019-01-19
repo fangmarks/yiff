@@ -1,71 +1,36 @@
-# Contact [codepupper / ryden#3621](https://14.werewovles-yiff.me) for more Information
+# yiff | made by [codepupper](https://werewovles-yiff.me "my homepage")
+
+If you need Support or want more Information, join [my discord server](https://discord.gg/He2822y "a link to my discord server")
 
 ## To Do
 
 - [x] e621
 - [x] e926
-- [ ] furry.bot
+- [x] furry.bot
 - [ ] sheri.fun
 - [ ] randomfox.ca
 - [ ] shibe.online
 
-## e621
+## Examples
 
-Without Filtering Cub Images out:
+Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a link to the examples, once they're there") once everything for v1 is done.
 
-```js
-const yiff = require('yiff')
+## Requirements
 
-yiff.e621.noCubFilter('kihu wolf abs') // This will not filter out Cub, thus letting you use 5 Tags
-.then(r => {
-    console.log(r)
-    /* Example Response
- { tags:
-   'abs anthro kihu muscular muscular_male nipples wolf' (+ others),
-  source:
-   'http://kihu.club/post/166519664866/awooooo-full-moon-commission-for-axelshep-on',
-  score: 24,
-  fav_count: 135,
-  image:
-   'https://static1.e621.net/data/e8/60/e86005c3a0adb274f3b73dc538cd4972.png',
-  artist: [ 'kihu' ],
-  postID: 1361959 }
-        */
-})
-```
+▶️ [Node.js v10.7.0](https://nodejs.org/en/ "A link to the node.js website")
 
-Filtering Cub Images out:
+<!-- `Optional:` Paid Sheri.fun API Key -->
 
-```js
-const yiff = require('yiff')
+## 📦 Installing
 
-yiff.e621.CubFilter('kihu wolf abs') // This will filter out Cub, thus letting you use 4 Tags
-.then(r => {
-    console.log(r)
-    /* Example Response
- { tags:
-   'abs anthro kihu muscular muscular_male nipples wolf' (+ others),
-  source:
-   'http://kihu.club/post/166519664866/awooooo-full-moon-commission-for-axelshep-on',
-  score: 24,
-  fav_count: 135,
-  image:
-   'https://static1.e621.net/data/e8/60/e86005c3a0adb274f3b73dc538cd4972.png',
-  artist: [ 'kihu' ],
-  postID: 1361959 }
-        */
-})
-```
+1. `cd path/to/your/project`
+2. Run `npm i yiff`
 
-Both are technically the same, .CubFilter() just lets you automatically filter out Cubs if you so choose
+This Module relies on [axios](https://npmjs.org/package/axios "A link to the axios package on npm") and [chalk](https://npmjs.org/package/chalk "A link to the chalk package on npm"), so if it doesn't work try to install them using `npm i axios && npm i chalk`
 
 ## Contributing & Issues
 
-Feel free to make a Pull request and fix some things, otherwise just open a Issue to let me know!
-
-## Crediting
-
-Please do not remove my Signature from the Code, other than that you can do with  this whatever you want!~
+Feel free to make a Pull request and fix some things, otherwise just open a Issue or join [my discord server](https://discord.gg/He2822y) and let me know what you want added!
 
 ## FAQ
 
