@@ -1,5 +1,7 @@
 # yiff | made by [codepupper](https://werewovles-yiff.me "my homepage")
 
+[![NPM](https://nodei.co/npm/yiff.png)](https://nodei.co/npm/yiff/)
+
 If you need Support or want more Information, join [my discord server](https://discord.gg/He2822y "a link to my discord server")
 
 ## To Do
