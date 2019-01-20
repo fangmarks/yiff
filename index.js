@@ -19,11 +19,11 @@ module.exports = async = {
             return data.image
         },
     sheri: require('./src/sheri'),
+    shibe: require('./src/shibe'),
     
     
     /* Coming Soon: 
     
-     shibe: require('./src/shibe'),
      center: require('./src/center')
      */
 

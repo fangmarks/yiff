@@ -4,18 +4,18 @@
 
 If you need Support or want more Information, join [my discord server](https://discord.gg/He2822y "a link to my discord server")
 
-## ⭐️ To Do
+## ⭐️ Supported APIs
 
 - [x] e621
 - [x] e926
 - [x] furry.bot
 - [x] randomfox.ca
 - [x] sheri.fun
-- [ ] shibe.online
+- [x] shibe.online
 
 ## 📝 Examples
 
-Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a link to the examples, once they're there") once everything for v1 is done.
+Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a link to the examples, once they're there") soon.
 
 ## ❗️ Requirements
 
@@ -39,6 +39,6 @@ This Module relies on [axios](https://npmjs.org/package/axios "A link to the axi
 
 Feel free to make a Pull request and fix some things, otherwise just open a Issue or join [my discord server](https://discord.gg/He2822y) and let me know what you want added!
 
-## ❤️ Contributors 
+## ❤️ Contributors
 
-[iDerp](https://github.com) - Making the sheri.fun module 
+[iDerp](https://github.com) - Making the sheri.fun module
