@@ -1,7 +1,7 @@
 {
   "name": "yiff",
-  "version": "0.0.4",
-  "description": "API Wrapper for various Image APIs",
+  "version": "1.0.0",
+  "description": "API Wrapper for various, mostly furry, Image APIs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,8 @@
   },
   "keywords": [
     "yiff",
+    "furry",
+    "booru",
     "api",
     "image",
     "discord",
