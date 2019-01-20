@@ -9,8 +9,8 @@ If you need Support or want more Information, join [my discord server](https://d
 - [x] e621
 - [x] e926
 - [x] furry.bot
+- [x] randomfox.ca
 - [ ] sheri.fun
-- [ ] randomfox.ca
 - [ ] shibe.online
 
 ## 📝 Examples
