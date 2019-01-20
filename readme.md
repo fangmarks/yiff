@@ -8,10 +8,10 @@ If you need Support or want more Information, join [my discord server](https://d
 
 - [x] e621
 - [x] e926
-- [x] furry.bot
-- [ ] sheri.fun
-- [ ] randomfox.ca
-- [ ] shibe.online
+- [x] [furry.bot](https://apidocs.furry.bot "furry.bot api docs")
+- [ ] [sheri.fun](https://sheri.fun "link to sheri.fun")
+- [ ] [randomfox.ca](https://randomfox.ca "link to randomfox.ca")
+- [ ] [shibe.online](https://shibe.online "link to shibe.online")
 
 ## 📝 Examples
 
