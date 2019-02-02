@@ -1,8 +1,9 @@
 const axios = require('axios')
 const chalk = require('chalk')
 const util = require('../util')
-let sfwURL = 'https://api.furry.bot/sfw/'
-let nsfwURL = 'https://api.furry.bot/nsfw/'
+let sfwURL = 'https://api.furry.bot/furry/sfw/'
+let nsfwURL = 'https://api.furry.bot/furry/nsfw/'
+let animalURL = 'https://api.furry.bot/animals/'
 module.exports = async = {
 
     /**
@@ -156,6 +157,21 @@ module.exports = async = {
         suck: async function(){
             nsfwURL = nsfwURL + 'suck'
             let x = await axios.get(nsfwURL)
+            let data = x.data.response
+            return data.image
+        }
+    },
+
+    animals: {
+        bird: async function(){
+            animalURL = animalURL + 'birb'
+            let x = await axios.get(animalURL)
+            let data = x.data.response
+            return data.image
+        },
+        fox: async function(){
+            animalURL = animalURL + 'fox'
+            let x = await axios.get(animalURL)
             let data = x.data.response
             return data.image
         }
