@@ -10,7 +10,7 @@ If you need Support or want more Information, join [my discord server](https://d
 - [x] e926
 - [x] furry.bot
 - [x] randomfox.ca
-- [x] sheri.fun
+- [x] sheri.bot
 - [x] shibe.online
 
 ## **CURRENTLY IN BETA MAY BREAK/NOT WORK**
@@ -25,7 +25,8 @@ Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a 
 
 ▶️ [Node.js v10.7.0](https://nodejs.org/en/ "A link to the node.js website")
 
-`Optional/Paid` [sheri.fun](https://sheri.fun/ "A link to the node.js website") API Key
+`Optional/Paid`
++ [sheri.bot](https://sheri.bot/ "A link to the node.js website") API Key
 
 ## 📦 Installing
 
@@ -45,4 +46,4 @@ Feel free to make a Pull request and fix some things, otherwise just open a Issu
 
 ## ❤️ Contributors
 
-[iDerp](https://github.com) - Making the sheri.fun module
+[iDerp](https://github.com/iDerp) - Making the sheri.bot module
