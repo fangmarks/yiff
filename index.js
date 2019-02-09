@@ -20,7 +20,7 @@ module.exports = async = {
         },
     sheri: require('./src/sheri'),
     shibe: require('./src/shibe'),
-    
+    beta: require('./src/beta')
     
     /* Coming Soon: 
     
