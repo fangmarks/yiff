@@ -26,6 +26,7 @@ Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a 
 ▶️ [Node.js v10.7.0](https://nodejs.org/en/ "A link to the node.js website")
 
 `Optional/Paid`
+
 + [sheri.bot](https://sheri.bot/ "A link to the node.js website") API Key
 
 ## 📦 Installing
