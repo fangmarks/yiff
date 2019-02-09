@@ -112,16 +112,17 @@ module.exports = async = {
          */
 
         yiff: async function(endpoint){
-            if(endpoint.toLowerCase() === 'straight' ||endpoint.toLowerCase() === 'het'){
-                endpoint = 'straight'
-            } else {
+            if(endpoint === undefined){
                 endpoint = 'gay'
                 util.log('Nothing was given, using the Gay Endpoint')
             }
+            else if(endpoint.toLowerCase() === 'straight' || endpoint.toLowerCase() === 'het'){
+                endpoint = 'straight'
+            } 
                     nsfwRequest = nsfwURL + 'yiff/' + endpoint
                     let x = await axios.get(nsfwRequest)
                     let data = x.data.response
-                    return data
+                    return data.image
                 },
         /**
          * @returns {Promise.<string>} The Link to the Image
