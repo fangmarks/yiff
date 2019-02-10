@@ -10,7 +10,7 @@ exports.shibes = function () {
     return new Promise((resolve, reject) => {
         axios.get(`${baseUrl.replace('ANIMAL', 'shibes')}`)
             .then(function (res) {
-                return resolve(res.data)
+                return resolve(res.data.toString())
             })
             .catch(function (err) {
                 return reject(err)
@@ -21,7 +21,7 @@ exports.cats = function () {
     return new Promise((resolve, reject) => {
         axios.get(`${baseUrl.replace('ANIMAL', 'cats')}`)
             .then(function (res) {
-                return resolve(res.data)
+                return resolve(res.data.toString())
             })
             .catch(function (err) {
                 return reject(err)
@@ -32,7 +32,7 @@ exports.birds = function () {
     return new Promise((resolve, reject) => {
         axios.get(`${baseUrl.replace('ANIMAL', 'birds')}`)
             .then(function (res) {
-                return resolve(res.data)
+                return resolve(res.data.toString())
             })
             .catch(function (err) {
                 return reject(err)
