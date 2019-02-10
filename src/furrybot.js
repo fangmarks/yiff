@@ -83,8 +83,8 @@ module.exports = async = {
          * @returns {Promise.<string>} The Link to the Image
          */
         bulge: async function(){
-                    nsfwURL = nsfwURL + 'bulge'
-                    let x = await axios.get(nsfwURL)
+                    nsfwRequest = nsfwURL + 'bulge'
+                    let x = await axios.get(nsfwRequest)
                     let data = x.data.response
                     return data.image
                 },
