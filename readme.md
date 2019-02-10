@@ -15,7 +15,7 @@ If you need Support or want more Information, join [my discord server](https://d
 
 ## **CURRENTLY IN BETA MAY BREAK/NOT WORK**
 
-+ yiff.wtf
+- yiff.wtf
 
 ## 📝 Examples
 
@@ -27,7 +27,7 @@ Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a 
 
 `Optional/Paid`
 
-+ [sheri.bot](https://sheri.bot/ "A link to the node.js website") API Key
+- [sheri.bot](https://sheri.bot/ "A link to the node.js website") API Key
 
 ## 📦 Installing
 
