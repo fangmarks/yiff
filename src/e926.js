@@ -6,6 +6,9 @@ module.exports = async = {
  * @param {string} request - The tags you want to search for | max 4
  */
     request: async function(request){
+    if(request === undefined || request === ' '){
+        throw new Error('No Tags given')
+    }
     request = request.replace(' ', '%20')
     let url = `https://e926.net/post/index.json?tags=${request}%20order:random&limit=1`
     let response = await axios.get(url)
