@@ -1,4 +1,4 @@
-# 🦊🐺 | yiff | made by [codepupper](https://werewovles-yiff.me "my homepage")
+# yiff | made by [codepupper](https://werewovles-yiff.me "my homepage")
 
 [![NPM](https://nodei.co/npm/yiff.png)](https://nodei.co/npm/yiff/)
 
@@ -12,14 +12,11 @@ If you need Support or want more Information, join [my discord server](https://d
 - [x] randomfox.ca
 - [x] sheri.bot
 - [x] shibe.online
+- [ ] yiff.wtf
 
-## **CURRENTLY IN BETA MAY BREAK/NOT WORK**
+<!-- ## 📝 Examples
 
-- yiff.wtf
-
-## 📝 Examples
-
-Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a link to the examples, once they're there") soon.
+Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a link to the examples, once they're there") soon. -->
 
 ## ❗️ Requirements
 
@@ -27,7 +24,7 @@ Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a 
 
 `Optional/Paid`
 
-- [sheri.bot](https://sheri.bot/ "A link to the node.js website") API Key
+- [sheri.bot](https://sheri.bot/ "A link to the sheri.bot website") API Key
 
 ## 📦 Installing
 
