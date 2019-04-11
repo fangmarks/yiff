@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "yiff",
 	"version": "1.1.2",
 	"description": "API Wrapper for various, mostly furry, Image APIs",
@@ -29,4 +30,36 @@
 		"axios": "^0.18.0",
 		"chalk": "^2.4.2"
 	}
+=======
+  "name": "yiff",
+  "version": "1.1.3",
+  "description": "API Wrapper for various, mostly furry, Image APIs",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codepupper/yiff.git"
+  },
+  "keywords": [
+    "yiff",
+    "furry",
+    "booru",
+    "api",
+    "image",
+    "discord",
+    "bot",
+    "e621",
+    "e926",
+    "wrapper"
+  ],
+  "author": "codepupper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codepupper/yiff/issues"
+  },
+  "homepage": "https://github.com/codepupper/yiff#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.2"
+  }
+>>>>>>> cd5421b0602bfd607f25934b23c42360f40a2075
 }

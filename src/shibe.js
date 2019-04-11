@@ -6,6 +6,7 @@ let util = require('../util');
 let baseUrl = 'http://shibe.online/api/ANIMAL?count=1&urls=true&httpsUrls=true';
 var exports = [];
 
+<<<<<<< HEAD
 exports.shibes = function() {
 	return new Promise((resolve, reject) => {
 		axios
@@ -43,3 +44,39 @@ exports.birds = function() {
 	});
 };
 module.exports = exports;
+=======
+exports.shibes = function () {
+    return new Promise((resolve, reject) => {
+        axios.get(`${baseUrl.replace('ANIMAL', 'shibes')}`)
+            .then(function (res) {
+                return resolve(res.data.toString())
+            })
+            .catch(function (err) {
+                return reject(err)
+            });
+    })
+}
+exports.cats = function () {
+    return new Promise((resolve, reject) => {
+        axios.get(`${baseUrl.replace('ANIMAL', 'cats')}`)
+            .then(function (res) {
+                return resolve(res.data.toString())
+            })
+            .catch(function (err) {
+                return reject(err)
+            });
+    })
+}
+exports.birds = function () {
+    return new Promise((resolve, reject) => {
+        axios.get(`${baseUrl.replace('ANIMAL', 'birds')}`)
+            .then(function (res) {
+                return resolve(res.data.toString())
+            })
+            .catch(function (err) {
+                return reject(err)
+            });
+    })
+}
+module.exports = exports;
+>>>>>>> cd5421b0602bfd607f25934b23c42360f40a2075

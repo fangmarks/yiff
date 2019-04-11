@@ -81,6 +81,7 @@ module.exports = async = {
 		/**
          * @returns {Promise.<string>} The Link to the Image
          */
+<<<<<<< HEAD
 		bulge  : async function() {
 			nsfwURL = nsfwURL + 'bulge';
 			let x = await axios.get(nsfwURL);
@@ -88,6 +89,15 @@ module.exports = async = {
 			return data.image;
 		},
 		/**
+=======
+        bulge: async function(){
+                    nsfwRequest = nsfwURL + 'bulge'
+                    let x = await axios.get(nsfwRequest)
+                    let data = x.data.response
+                    return data.image
+                },
+        /**
+>>>>>>> cd5421b0602bfd607f25934b23c42360f40a2075
          * @returns {Promise.<string>} The Link to the Image
          */
 		bang   : async function() {
@@ -110,6 +120,7 @@ module.exports = async = {
          * @param {string=} endpoint [`Default: Gay`]  - gay or straight
          */
 
+<<<<<<< HEAD
 		yiff   : async function(endpoint) {
 			if (endpoint.toLowerCase() === 'straight' || endpoint.toLowerCase() === 'het') {
 				endpoint = 'straight';
@@ -123,6 +134,22 @@ module.exports = async = {
 			return data;
 		},
 		/**
+=======
+        yiff: async function(endpoint){
+            if(endpoint === undefined){
+                endpoint = 'gay'
+                util.log('Nothing was given, using the Gay Endpoint')
+            }
+            else if(endpoint.toLowerCase() === 'straight' || endpoint.toLowerCase() === 'het'){
+                endpoint = 'straight'
+            } 
+                    nsfwRequest = nsfwURL + 'yiff/' + endpoint
+                    let x = await axios.get(nsfwRequest)
+                    let data = x.data.response
+                    return data.image
+                },
+        /**
+>>>>>>> cd5421b0602bfd607f25934b23c42360f40a2075
          * @returns {Promise.<string>} The Link to the Image
          */
 		hug    : async function() {
