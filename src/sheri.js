@@ -3,7 +3,7 @@ const axios = require('axios'); // api requests
 const c = require('chalk'); // colorful console
 let util = require('../util');
 // ! Set Important Variables
-let baseUrl = 'https://sheri.fun/api/v2';
+let baseUrl = 'https://sheri.bot/api/v2';
 
 var exports = [];
 
