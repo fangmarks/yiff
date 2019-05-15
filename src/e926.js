@@ -19,6 +19,9 @@ module.exports = async = {
 			score,
 			fav_count,
 			file_url,
+			artist,
+			id
+		} = response.data[0];
 		let data = {
 			tags: tags,
 			source: source,
