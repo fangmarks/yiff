@@ -1,5 +1,5 @@
 let axios = require('axios');
-let utils = require('../util')
+let util = require('../util')
 
 module.exports = async = {
 	/**
@@ -11,7 +11,7 @@ module.exports = async = {
 		let url = `https://e621.net/post/index.json?tags=${request}%20order:random&limit=1`;
 		let response = await axios.get(`${url}`, {
 			headers: {
-				"user-agent": utils.useragent
+				"user-agent": util.useragent
 			}
 		})
 		let {
@@ -45,7 +45,7 @@ module.exports = async = {
 		let url = `https://e621.net/post/index.json?tags=${request}%20-cub%20order:random&limit=1`;
 		let response = await axios.get(`${url}`, {
 			headers: {
-				"user-agent": utils.useragent
+				"user-agent": util.useragent
 			}
 		})
 		let {

@@ -4,7 +4,6 @@
 const c = require('chalk');
 const p = require('./package.json')
 let log = console.log;
-let p = require('./package.json')
 
 
 
