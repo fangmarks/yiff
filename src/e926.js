@@ -1,4 +1,5 @@
 let axios = require('axios');
+let util = require('../util')
 module.exports = async = {
 	/**
 	 * 
@@ -7,11 +8,11 @@ module.exports = async = {
 	request: async function (request) {
 		request = request.replace(' ', '%20');
 		let url = `https://e926.net/post/index.json?tags=${request}%20order:random&limit=1`;
-		let response = await axios.get(`${url}`, {
+		let response = await axios.get(url, {
 			headers: {
-				"user-agent": utils.useragent
+				'user-agent': util.useragent
 			}
-		})
+		});
 		let {
 			tags,
 			source,

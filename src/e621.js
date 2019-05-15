@@ -1,5 +1,6 @@
 let axios = require('axios');
 let utils = require('../util')
+
 module.exports = async = {
 	/**
 	 * 
@@ -71,5 +72,5 @@ module.exports = async = {
 };
 
 /*
-    API Wrapper written by codepupper
+    API Wrapper written by @codepupper
 */
