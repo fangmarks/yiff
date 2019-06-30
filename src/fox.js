@@ -1,11 +1,9 @@
 const axios = require('axios')
 
-module.exports = async = {
+module.exports = async =
 
-    fox: async function(){
+    async function fox() {
         let response = await axios.get('https://randomfox.ca/floof')
         let data = response.data
         return data.image
     }
-
-}

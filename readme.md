@@ -12,7 +12,6 @@ If you need Support or want more Information, join [my discord server](https://d
 - [x] randomfox.ca
 - [x] sheri.bot
 - [x] shibe.online
-- [ ] yiff.wtf
 
 <!-- ## 📝 Examples
 
@@ -20,7 +19,7 @@ Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a 
 
 ## ❗️ Requirements
 
-▶️ [Node.js v10.7.0](https://nodejs.org/en/ "A link to the node.js website")
+▶️ [nodejs latest](https://nodejs.org/en/ "A link to the node.js website")
 
 `Optional/Paid`
 
