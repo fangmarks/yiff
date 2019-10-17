@@ -1,8 +1,8 @@
 let axios = require('axios');
 let util = require('../util')
 module.exports = async = {
-	setUserAgent: function (useragent) {
-		this.useragent = useragent
+	setUserAgent: function (software) {
+		this.useragent = util.useragent(software)
 	},
 	/**
 	 * 

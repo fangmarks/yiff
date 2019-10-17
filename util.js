@@ -19,8 +19,8 @@ module.exports = {
 		throw new Error(c.hex('#a11eff')(`[Yiff Module] `) + c.hex('#ff8d28')('The API Key you provided is invalid.'));
 	},
 	useragent: function (software) {
-		if (software !== undefined || software !== null) {
-			return `${software} using yiff/${p.version} by codepupper`
+		if (software !== undefined || software !== null || software === '') {
+			return `${software} using yiff/${p.version} (ry / codepupper)`
 		} else {
 			return `yiff/${p.version} (codepupper)`
 		}
