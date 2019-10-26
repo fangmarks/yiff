@@ -1,6 +1,6 @@
 {
 	"name": "yiff",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"description": "API Wrapper for various, mostly furry, Image APIs",
 	"main": "index.js",
 	"repository": {

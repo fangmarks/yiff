@@ -13,7 +13,7 @@ module.exports = async = {
 		let url = `https://e926.net/post/index.json?tags=${request}%20order:random&limit=1`;
 		let response = await axios.get(url, {
 			headers: {
-				"user-agent": this.useragent || util.useragent
+				"user-agent": this.useragent || util.useragent()
 			}
 		});
 		let {
