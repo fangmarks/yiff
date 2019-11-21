@@ -1,24 +1,13 @@
 {
 	"name": "yiff",
-	"version": "1.2.5",
+	"version": "1.2.7",
 	"description": "API Wrapper for various, mostly furry, Image APIs",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/codepupper/yiff.git"
 	},
-	"keywords": [
-		"yiff",
-		"furry",
-		"booru",
-		"api",
-		"image",
-		"discord",
-		"bot",
-		"e621",
-		"e926",
-		"wrapper"
-	],
+	"keywords": [ "yiff", "furry", "booru", "api", "image", "discord", "bot", "e621", "e926", "wrapper" ],
 	"author": "codepupper",
 	"license": "MIT",
 	"bugs": {
