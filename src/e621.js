@@ -1,32 +1,26 @@
 let axios = require('axios');
-let util = require('../util')
+let util = require('../util');
 
 module.exports = async = {
-
-	setUserAgent: function (software) {
-		this.useragent = util.useragent(software)
+	setUserAgent: function(software) {
+		this.useragent = util.useragent(software);
 	},
 	/**
 	 * 
 	 * @param {string} request - The tags you want to search for | max 4
 	 */
-	noCubFilter: async function (request) {
-		request = request.replace(/ /g, '%20');
-		let url = `https://e621.net/post/index.json?tags=${request}%20order:random&limit=1`
+	noCubFilter: async function(request) {
+		let url = `https://e621.net/post/index.json`;
 		let response = await axios.get(url, {
 			headers: {
-				"user-agent": this.useragent || util.useragent()
+				'user-agent': this.useragent || util.useragent()
+			},
+			params: {
+				tags: `${request} order:random`
 			}
-		})
-		let {
-			tags,
-			source,
-			score,
-			fav_count,
-			file_url,
-			artist,
-			id
-		} = response.data[0];
+		});
+		if (!response.data[0]) throw new Error('There was no Image found with those tags');
+		let { tags, source, score, fav_count, file_url, artist, id } = response.data[0];
 		let data = {
 			tags: tags,
 			source: source,
@@ -44,23 +38,18 @@ module.exports = async = {
 	 * 
 	 * @param {string} request - The tags you want to search for | max 3
 	 */
-	CubFilter: async function (request) {
-		request = request.replace(/ /g, '%20');
-		let url = `https://e621.net/post/index.json?tags=${request}%20-cub%20order:random&limit=1`;
-		let response = await axios.get(`${url}`, {
+	CubFilter: async function(request) {
+		let url = `https://e621.net/post/index.json`;
+		let response = await axios.get(url, {
 			headers: {
-				"user-agent": this.useragent || util.useragent()
+				'user-agent': this.useragent || util.useragent()
+			},
+			params: {
+				tags: `${request} order:random -young`
 			}
-		})
-		let {
-			tags,
-			source,
-			score,
-			fav_count,
-			file_url,
-			artist,
-			id
-		} = response.data[0];
+		});
+		if (!response.data[0]) throw new Error('There was no Image found with those tags');
+		let { tags, source, score, fav_count, file_url, artist, id } = response.data[0];
 		let data = {
 			tags: tags,
 			source: source,
