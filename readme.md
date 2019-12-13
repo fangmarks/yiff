@@ -1,4 +1,4 @@
-# yiff | made by [codepupper](https://werewovles-yiff.me "my homepage")
+# yiff | made by [codepupper](https://floofy.dev "my homepage")
 
 [![NPM](https://nodei.co/npm/yiff.png)](https://nodei.co/npm/yiff/)
 
@@ -43,4 +43,4 @@ Feel free to make a Pull request and fix some things, otherwise just open a Issu
 
 ## ❤️ Contributors
 
-[iDerp](https://github.com/iDerp) - Making the sheri.bot module
+[iDerp](https://github.com/iDerp) - Making the (now depricated) sheri.bot module
