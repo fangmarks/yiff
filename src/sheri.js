@@ -21,7 +21,7 @@ const setToken = function (apiKey) {
 	}
 };
 
-let public = {
+const public = {
 	murr: async function () {
 		return new Promise((resolve, reject) => {
 			axios
