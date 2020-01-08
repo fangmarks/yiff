@@ -52,7 +52,7 @@ module.exports = async = {
 	 * @param {string} tags - The tags you want to search for | max 4
 	 */
 	noCubFilter: async function (tags) {
-		request(tags, { isCubAllowed: true })
+		return await request(tags, { isCubAllowed: true })
 	},
 
 	/**
@@ -60,7 +60,7 @@ module.exports = async = {
 	 * @param {string} tags - The tags you want to search for | max 3
 	 */
 	CubFilter: async function (tags) {
-		request(tags, { isCubAllowed: false })
+		return await request(tags, { isCubAllowed: false })
 	}
 };
 
