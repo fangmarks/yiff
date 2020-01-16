@@ -1,38 +1,51 @@
-let axios = require('axios');
-let util = require('../util');
+const axios = require('axios');
+const util = require('../util');
+
 module.exports = async = {
-	setUserAgent: function(software) {
+	setUserAgent: function (software) {
 		this.useragent = util.useragent(software);
 	},
+
 	/**
 	 * 
-	 * @param {string} request - The tags you want to search for | max 4
+	 * @param {String} requestTags - The tags you want to search for
 	 */
-	request: async function(request) {
-		let url = `https://e926.net/post/index.json`;
-		let response = await axios.get(url, {
+	request: async function (requestTags) {
+		let response = await axios.get(`https://e926.net/post/index.json`, {
 			headers: {
 				'user-agent': this.useragent || util.useragent()
 			},
 			params: {
-				tags: `${request} order:random`
+				tags: `${requestTags} order:random`
 			}
+		}).catch(error => {
+			console.log(error.response)
 		});
+
 		if (!response.data[0]) throw new Error('There was no Image found with those tags');
-		let { tags, source, score, fav_count, file_url, artist, id } = response.data[0];
-		let data = {
-			tags: tags,
-			source: source,
-			score: score,
-			fav_count: fav_count,
+
+		let {
+			tags,
+			source,
+			score,
+			fav_count,
+			file_url,
+			artist,
+			id
+		} = response.data[0];
+
+		return {
+			tags,
+			source,
+			score,
+			fav_count,
+			artist,
 			image: file_url,
-			artist: artist,
 			postID: id
-		};
-		return data;
+		}
 	}
 };
 
 /*
-    API Wrapper written by codepupper
+    API Wrapper written by @codepupper
 */

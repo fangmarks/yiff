@@ -7,7 +7,18 @@
 		"type": "git",
 		"url": "git+https://github.com/codepupper/yiff.git"
 	},
-	"keywords": [ "yiff", "furry", "booru", "api", "image", "discord", "bot", "e621", "e926", "wrapper" ],
+	"keywords": [
+		"yiff",
+		"furry",
+		"booru",
+		"api",
+		"image",
+		"discord",
+		"bot",
+		"e621",
+		"e926",
+		"wrapper"
+	],
 	"author": "codepupper",
 	"license": "MIT",
 	"bugs": {
