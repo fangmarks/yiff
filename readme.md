@@ -35,12 +35,12 @@ This Module relies on [axios](https://npmjs.org/package/axios "A link to the axi
 ## ❓ FAQ
 
 > **Q:** Will you add other APIs as well?\
-> **A:** Depends on if they're either free or I get a all-access token
+> **A:** Depends on if they're either free or I get an all-access token
 
 ## Contributing & Issues
 
 Feel free to make a Pull request and fix some things, otherwise just open a Issue or join [my discord server](https://discord.gg/He2822y) and let me know what you want added!
 
 ## ❤️ Contributors
-
-[iDerp](https://github.com/iDerp) - Making the (now depricated) sheri.bot module
++ [alexazf](https://github.com/alexazf) - refactoring the Sheri.js file
++ [iDerp](https://github.com/iDerp) - Making the (now depricated) sheri.bot module
