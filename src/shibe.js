@@ -3,7 +3,7 @@ const axios = require('axios'); // api requests
 const c = require('chalk'); // colorful console
 let util = require('../util');
 // ! Set Important Variables
-let baseUrl = 'http://shibe.online/api/ANIMAL?count=1&urls=true&httpsUrls=true';
+let baseUrl = 'https://shibe.online/api/ANIMAL?count=1&urls=true&httpsUrls=true';
 var exports = [];
 
 exports.shibes = function() {
