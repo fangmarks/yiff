@@ -1,6 +1,7 @@
 /*
     API Wrapper written by codepupper
 */
+const axios = require('axios');
 
 module.exports = async = {
 	version: require('./package.json').version,
