@@ -1,183 +1,124 @@
-const axios = require('axios');
-const chalk = require('chalk');
-const util = require('../util');
-const sfwURL = 'https://api.furry.bot/furry/sfw/';
-const nsfwURL = 'https://api.furry.bot/furry/nsfw/';
-const animalURL = 'https://api.furry.bot/animals/';
-module.exports = async = {
-	/**
-	 * SFW Endpoints of furry.bot
-	 */
+let Base = require("./Base");
+const p = require("phin");
+const version = "V2";
+class FurryBot extends Base {
+  constructor(options) {
+    super(options);
+    this.API = `https://api.furry.bot/${version}`;
+  }
+  async request(endpoint, kind, nsfw, headers, body) {
+    if (!endpoint) throw new Error("Endpoint not defined");
+    let url;
+    let NSFW = nsfw ? "nsfw" : "sfw";
+    switch (kind) {
+      case "furry":
+        url = `${this.API}/furry/${NSFW}/${endpoint}/`;
+        break;
+      case "animal":
+        url = `${this.API}/animal/${endpoint}/`;
+        break;
 
-	sfw: {
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		boop: async function() {
-			sfwRequest = sfwURL + 'boop';
-			let x = await axios.get(sfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		cuddle: async function() {
-			sfwRequest = sfwURL + 'cuddle';
-			let x = await axios.get(sfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		fursuit: async function() {
-			sfwRequest = sfwURL + 'fursuit';
-			let x = await axios.get(sfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		hold: async function() {
-			sfwRequest = sfwURL + 'hold';
-			let x = await axios.get(sfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		hug: async function() {
-			sfwRequest = sfwURL + 'hug';
-			let x = await axios.get(sfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		kiss: async function() {
-			sfwRequest = sfwURL + 'kiss';
-			let x = await axios.get(sfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		lick: async function() {
-			sfwRequest = sfwURL + 'lick';
-			let x = await axios.get(sfwRequest);
-			let data = x.data.response;
-			return data.image;
-		}
-	},
-	/** 
-	 * NSFW Endpoints of furry.bot
-	 */
-	nsfw: {
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		bulge: async function() {
-			nsfwRequest = nsfwURL + 'bulge';
+      default:
+        break;
+    }
+    let res = await p({
+      parse: "json",
+      url,
+      method: "GET",
+      headers: { "User-Agent": this.ua },
+      ...(!!body ? { data: body } : {}),
+    });
+    console.log(url);
+    console.log(res.body.images);
+    return res.body;
+  }
+  // ! Animals
+  get birb() {
+    return this.request("birb", "animals");
+  }
+  get blep() {
+    return this.request("blep", "animals");
+  }
+  get chee() {
+    return this.request("cheeta", "animals");
+  }
+  get lynx() {
+    return this.request("lynx", "animals");
+  }
+  get wolf() {
+    return this.request("wolf", "animals");
+  }
 
-			let x = await axios.get(nsfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		bang: async function() {
-			nsfwRequest = nsfwURL + 'bang';
-			let x = await axios.get(nsfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		cuddle: async function() {
-			nsfwRequest = nsfwURL + 'cuddle';
-			let x = await axios.get(nsfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 * @param {string=} endpoint [`Default: Gay`]  - gay or straight
-		 */
+  // ! SFW Furry
 
-		yiff: async function(endpoint) {
-			if (endpoint.toLowerCase() === 'straight' || endpoint.toLowerCase() === 'het') {
-				endpoint = 'straight';
-			} else {
-				endpoint = 'gay';
-				util.log('Nothing was given, using the Gay Endpoint');
-			}
-			nsfwRequest = nsfwURL + 'yiff/' + endpoint;
-			let x = await axios.get(nsfwRequest);
-			let data = x.data.response;
-			return data;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		hug: async function() {
-			nsfwRequest = nsfwURL + 'hug';
-			let x = await axios.get(nsfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		kiss: async function() {
-			nsfwRequest = nsfwURL + 'kiss';
-			let x = await axios.get(nsfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		lick: async function() {
-			nsfwRequest = nsfwURL + 'lick';
-			let x = await axios.get(nsfwRequest);
-			let data = x.data.response;
-			return data.image;
-		},
+  get cuddle() {
+    return this.request("cuddle", "furry");
+  }
+  get flop() {
+    return this.request("flop", "furry");
+  }
+  get boop() {
+    return this.request("boop", "furry");
+  }
+  get fursuit() {
+    return this.request("fursuit", "furry");
+  }
+  get hold() {
+    return this.request("hold", "furry");
+  }
+  get howl() {
+    return this.request("howl", "furry");
+  }
+  get hug() {
+    return this.request("hug", "furry");
+  }
+  get kiss() {
+    return this.request("kiss", "furry");
+  }
+  get lick() {
+    return this.request("lick", "furry");
+  }
+  get propose() {
+    return this.request("propose", "furry");
+  }
 
-		/**
-		 * @returns {Promise.<string>} The Link to the Image
-		 */
-		suck: async function() {
-			nsfwRequest = nsfwURL + 'suck';
-			let x = await axios.get(nsfwRequest);
-			let data = x.data.response;
-			return data.image;
-		}
-	},
+  // ! NSFW FURRY
+  get nbang() {
+    return this.request("bang", "furry", true);
+  }
+  get nbulge() {
+    return this.request("bulge", "furry", true);
+  }
+  get ncuddle() {
+    return this.request("cuddle", "furry", true);
+  }
+  get ngroup() {
+    return this.request("group", "furry", true);
+  }
+  get nhug() {
+    return this.request("hug", "furry", true);
+  }
+  get nkiss() {
+    return this.request("kiss", "furry", true);
+  }
+  get nlick() {
+    return this.request("lick", "furry", true);
+  }
+  get nsuck() {
+    return this.request("suck", "furry", true);
+  }
+  get ngayyiff() {
+    return this.request("yiff/gay", "furry", true);
+  }
+  get nstraightyiff() {
+    return this.request("yiff/straight", "furry", true);
+  }
+  get nlesbianyiff() {
+    return this.request("yiff/lesbian", "furry", true);
+  }
+  get ndickgirlyiff() {
+    return this.request("yiff/dickgirl", "furry", true);
+  }
+}
 
-	animals: {
-		bird: async function() {
-			requestAnimal = animalURL + 'birb';
-			let x = await axios.get(requestAnimal);
-			let data = x.data.response;
-			return data.image;
-		},
-		fox: async function() {
-			requestAnimal = animalURL + 'fox';
-			let x = await axios.get(requestAnimal);
-			let data = x.data.response;
-			return data.image;
-		}
-	}
-};
-
-/*
-    API Wrapper written by codepupper
-*/
+module.exports = FurryBot;
