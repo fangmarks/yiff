@@ -1,5 +1,5 @@
-let Base = require("./Base");
 const p = require("phin");
+let Base = require("./Base");
 const version = "V2";
 class FurryBot extends Base {
   constructor(options) {
@@ -28,8 +28,6 @@ class FurryBot extends Base {
       headers: { "User-Agent": this.ua },
       ...(!!body ? { data: body } : {}),
     });
-    console.log(url);
-    console.log(res.body.images);
     return res.body;
   }
   // ! Animals

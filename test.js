@@ -1,4 +1,9 @@
 let yiff = require("./index");
-let x = new yiff.furrybot();
+let x = new yiff.e926();
 
-console.log(x);
+async function y() {
+  return await x.get("werewolf male/male");
+}
+y().then((r) => {
+  console.log(r);
+});

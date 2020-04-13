@@ -6,12 +6,12 @@ If you need Support or want more Information, join [my discord server](https://d
 
 ## ⭐️ Supported APIs
 
+- [x] furry.bot
 - [x] e621
 - [x] e926
-- [x] furry.bot
+- [x] shibe.online
 - [x] randomfox.ca
 - [x] sheri.bot
-- [x] shibe.online
 
 ## ❗️ Requirements
 
