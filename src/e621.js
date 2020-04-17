@@ -27,7 +27,7 @@ class E621 extends Base {
     if (post.tags.artist.length === 0) artists = ["unknown_artist"];
     else artists = post.tags.artist;
 
-    if (post.sources.length === 0) sources = ["unknown_artist"];
+    if (post.sources.length === 0) sources = ["unknown_source"];
     else sources = post.souces;
 
     return {

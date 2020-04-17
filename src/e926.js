@@ -23,12 +23,10 @@ class E926 extends Base {
         "There was no Image found with those Tags, please try again."
       );
 
-    if (post.file.url == null) this.request(tags);
-
     if (post.tags.artist.length === 0) artists = ["unknown_artist"];
     else artists = post.tags.artist;
 
-    if (post.sources.length === 0) sources = ["unknown_artist"];
+    if (post.sources.length === 0) sources = ["unknown_source"];
     else sources = post.souces;
 
     return {
