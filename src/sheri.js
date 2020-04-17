@@ -72,6 +72,52 @@ class Sheri extends Base {
 
   // ! SFW
 
+  get ban() {
+    return this.request("ban");
+  }
+  get boop() {
+    return this.request("boop");
+  }
+  get cuddle() {
+    return this.request("cuddle");
+  }
+  get hold() {
+    return this.request("hold");
+  }
+  get hug() {
+    return this.request("hug");
+  }
+  get kick() {
+    return this.request("kick");
+  }
+  get kiss() {
+    return this.request("kiss");
+  }
+  get lick() {
+    return this.request("lick");
+  }
+  get maws() {
+    return this.request("maws");
+  }
+  get pat() {
+    return this.request("pat");
+  }
+  get paws() {
+    return this.request("paws");
+  }
+  get pokemon() {
+    return this.request("pokemon");
+  }
+  get proposal() {
+    return this.request("proposal");
+  }
+  get raccoon() {
+    return this.request("raccoon");
+  }
+  get trickortreat() {
+    return this.request("trickortreat");
+  }
+
   // ! NSFW
   get sixtynine() {
     return this.request("69");
