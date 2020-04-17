@@ -10,25 +10,15 @@ class Sheri extends Base {
   }
   async request(endpoint) {
     if (!endpoint) throw new Error("Endpoint not defined");
-    console.log(this.apikey);
-    let headersKey = {
-      "User-Agent": this.ua,
-      Authorization: this.apikey,
-    };
-    let headers_keyless = {
-      "User-Agent": this.ua,
-    };
-    let headers;
-    if (["yiff", "murr"].includes(endpoint)) {
-      headers = headers_keyless;
-    } else {
-      headers = headersKey;
-    }
+
     let res = await p({
       parse: "json",
       url: `${this.API}${endpoint}?format=json`,
       method: "GET",
-      headers,
+      headers: {
+        "User-Agent": this.ua,
+        Authorization: this.apikey,
+      },
     });
     return res.body;
   }
