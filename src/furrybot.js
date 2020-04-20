@@ -1,12 +1,13 @@
 const p = require("phin");
 let Base = require("./Base");
-const version = "V2";
+let ch = require("chalk");
+const version = "V1";
 class FurryBot extends Base {
   constructor(options) {
     super(options);
     this.API = `https://api.furry.bot/${version}`;
   }
-  async request(endpoint, kind, nsfw, headers, body) {
+  async request(endpoint, kind, nsfw) {
     if (!endpoint) throw new Error("Endpoint not defined");
     let url;
     let NSFW = nsfw ? "nsfw" : "sfw";
@@ -15,36 +16,49 @@ class FurryBot extends Base {
         url = `${this.API}/furry/${NSFW}/${endpoint}/`;
         break;
       case "animal":
-        url = `${this.API}/animal/${endpoint}/`;
+        url = `${this.API}/animals/${endpoint}/`;
         break;
 
       default:
         break;
     }
-    let res = await p({
-      parse: "json",
-      url,
-      method: "GET",
-      headers: { "User-Agent": this.ua },
-      ...(!!body ? { data: body } : {}),
-    });
-    return res.body;
+    let res;
+    try {
+      res = await p({
+        url,
+        method: "GET",
+        followRedirects: true,
+        headers: {
+          "User-Agent": this.ua,
+        },
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+    let body;
+    try {
+      body = JSON.parse(res.body.toString());
+      //    console.log(body.response);
+    } catch (e) {
+      console.error(res.body.toString()); // do some other stuff with it here
+    }
+    return body.response;
   }
-  // ! Animals
+  // ! Animals ( )
   get birb() {
-    return this.request("birb", "animals");
+    return this.request("birb", "animal");
   }
   get blep() {
-    return this.request("blep", "animals");
+    return this.request("blep", "animal");
   }
-  get chee() {
-    return this.request("cheeta", "animals");
-  }
+  /*   get chee() {
+    return this.request("cheeta", "animal");
+  } */
   get lynx() {
-    return this.request("lynx", "animals");
+    return this.request("lynx", "animal");
   }
   get wolf() {
-    return this.request("wolf", "animals");
+    return this.request("wolf", "animal");
   }
 
   // ! SFW Furry

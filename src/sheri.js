@@ -1,6 +1,6 @@
 const p = require("phin");
 let Base = require("./Base");
-const version = "V2";
+let ch = require("chalk");
 class Sheri extends Base {
   constructor(options) {
     super(options);
@@ -10,19 +10,30 @@ class Sheri extends Base {
   }
   async request(endpoint) {
     if (!endpoint) throw new Error("Endpoint not defined");
-
-    let res = await p({
-      parse: "json",
-      url: `${this.API}${endpoint}?format=json`,
-      method: "GET",
-      headers: {
-        "User-Agent": this.ua,
-        Authorization: this.apikey,
-      },
-    });
-    return res.body;
+    let res;
+    try {
+      res = await p({
+        parse: "json",
+        url: `${this.API}${endpoint}?format=json`,
+        method: "GET",
+        followRedirects: true,
+        headers: {
+          "User-Agent": this.ua,
+          Authorization: this.apikey,
+        },
+      });
+    } catch (error) {
+      console.error(ch.red(`Error in: ${endpoint}`));
+    }
+    let body;
+    try {
+      body = res.body;
+    } catch (e) {
+      console.error(res.body.toString()); // do some other stuff with it here
+    }
+    return body;
   }
-  // ! Animals
+  // ! Public
   get bunny() {
     return this.request("bunny");
   }
@@ -40,9 +51,6 @@ class Sheri extends Base {
   }
   get nature() {
     return this.request("nature");
-  }
-  get pig() {
-    return this.request("pig");
   }
   get pig() {
     return this.request("pig");
@@ -101,9 +109,9 @@ class Sheri extends Base {
   get proposal() {
     return this.request("proposal");
   }
-  get raccoon() {
+  /*   get raccoon() {
     return this.request("raccoon");
-  }
+  } */
   get trickortreat() {
     return this.request("trickortreat");
   }
@@ -178,9 +186,9 @@ class Sheri extends Base {
   get mcreampie() {
     return this.request("mcreampie");
   }
-  get mpresentation() {
+  /*   get mpresentation() {
     return this.request("mpresentation");
-  }
+  } */
   get mseduce() {
     return this.request("mseduce");
   }
@@ -229,9 +237,9 @@ class Sheri extends Base {
   get nlick() {
     return this.request("nlick");
   }
-  get npats() {
+  /*   get npats() {
     return this.request("npats");
-  }
+  } */
   get npokemon() {
     return this.request("npokemon");
   }

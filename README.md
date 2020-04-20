@@ -10,8 +10,8 @@ If you need Support or want more Information, join [my discord server](https://d
 - [x] e621
 - [x] e926
 - [x] shibe.online
-- [] sheri.bot
-- [] randomfox.ca
+- [x] sheri.bot
+- [ ] randomfox.ca
 
 ## ❗️ Requirements
 
