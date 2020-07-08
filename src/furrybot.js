@@ -7,21 +7,9 @@ class FurryBot extends Base {
     super(options);
     this.API = `https://api.furry.bot/${version}`;
   }
-  async request(endpoint, kind, nsfw) {
+  async request(endpoint, kind) {
     if (!endpoint) throw new Error("Endpoint not defined");
-    let url;
-    let NSFW = nsfw ? "nsfw" : "sfw";
-    switch (kind) {
-      case "furry":
-        url = `${this.API}/furry/${NSFW}/${endpoint}/`;
-        break;
-      case "animal":
-        url = `${this.API}/animals/${endpoint}/`;
-        break;
-
-      default:
-        break;
-    }
+    let url = `${this.API}/${kind}/${endpoint}/`;
     let res;
     try {
       res = await p({
@@ -95,41 +83,20 @@ class FurryBot extends Base {
   }
 
   // ! NSFW FURRY
-  get nbang() {
-    return this.request("bang", "furry", true);
-  }
   get nbulge() {
-    return this.request("bulge", "furry", true);
-  }
-  get ncuddle() {
-    return this.request("cuddle", "furry", true);
-  }
-  get ngroup() {
-    return this.request("group", "furry", true);
-  }
-  get nhug() {
-    return this.request("hug", "furry", true);
-  }
-  get nkiss() {
-    return this.request("kiss", "furry", true);
-  }
-  get nlick() {
-    return this.request("lick", "furry", true);
-  }
-  get nsuck() {
-    return this.request("suck", "furry", true);
+    return this.request("bulge", "furry");
   }
   get ngayyiff() {
-    return this.request("yiff/gay", "furry", true);
+    return this.request("yiff/gay", "furry");
   }
   get nstraightyiff() {
-    return this.request("yiff/straight", "furry", true);
+    return this.request("yiff/straight", "furry");
   }
   get nlesbianyiff() {
-    return this.request("yiff/lesbian", "furry", true);
+    return this.request("yiff/lesbian", "furry");
   }
   get ndickgirlyiff() {
-    return this.request("yiff/dickgirl", "furry", true);
+    return this.request("yiff/dickgirl", "furry");
   }
 }
 
