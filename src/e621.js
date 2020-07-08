@@ -5,15 +5,15 @@ class E621 extends Base {
     super(options);
   }
 
-  async request(tags, isCubAllowed) {
+  async request(tags) {
     if (!tags) throw new Error("No Tags defined");
     let res = await p({
       parse: "json",
-      url: `https://e621.net/posts.json?limit=1&tags=order:random type:png type:jpg ${tags} ${
-        isCubAllowed ? "" : "-young"
-      }`,
+      url: `https://e621.net/posts.json?limit=1&tags=order:random type:png type:jpg ${tags} -young`,
       method: "GET",
-      headers: { "User-Agent": this.ua },
+      headers: {
+        "User-Agent": this.ua
+      },
     });
 
     let post = res.body.posts[0];
@@ -44,10 +44,7 @@ class E621 extends Base {
     };
   }
   async get(tags) {
-    return await this.request(tags, false);
-  }
-  async getWithCub(tags) {
-    return await this.request(tags, true);
+    return await this.request(tags);
   }
 }
 

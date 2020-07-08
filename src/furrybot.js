@@ -1,7 +1,7 @@
 const p = require("phin");
 let Base = require("./Base");
 let ch = require("chalk");
-const version = "V1";
+const version = "V2";
 class FurryBot extends Base {
   constructor(options) {
     super(options);
@@ -9,7 +9,7 @@ class FurryBot extends Base {
   }
   async request(endpoint, kind) {
     if (!endpoint) throw new Error("Endpoint not defined");
-    let url = `${this.API}/${kind}/${endpoint}/`;
+    let url = `${this.API}/${kind}/${endpoint}`;
     let res;
     try {
       res = await p({
@@ -21,7 +21,7 @@ class FurryBot extends Base {
         },
       });
     } catch (error) {
-      throw new Error(error);
+      throw error;
     }
     let body;
     try {
@@ -30,23 +30,23 @@ class FurryBot extends Base {
     } catch (e) {
       console.error(res.body.toString()); // do some other stuff with it here
     }
-    return body.response;
+    return body.images[0];
   }
   // ! Animals ( )
   get birb() {
-    return this.request("birb", "animal");
+    return this.request("birb", "animals");
   }
   get blep() {
-    return this.request("blep", "animal");
+    return this.request("blep", "animals");
   }
   /*   get chee() {
     return this.request("cheeta", "animal");
   } */
   get lynx() {
-    return this.request("lynx", "animal");
+    return this.request("lynx", "animals");
   }
   get wolf() {
-    return this.request("wolf", "animal");
+    return this.request("wolf", "animals");
   }
 
   // ! SFW Furry

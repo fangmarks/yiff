@@ -3,6 +3,7 @@
   "version": "2.0.0b",
   "description": "",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://werewolf.codes/h/yiff.git"
