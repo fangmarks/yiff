@@ -6,7 +6,7 @@
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://werewolf.codes/h/yiff.git"
+    "url": "git+https://github.com/hokkqido/yiff.git"
   },
   "keywords": [
     "yiff",
