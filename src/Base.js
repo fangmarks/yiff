@@ -13,7 +13,7 @@ class Base {
     if (!this.name || !this.version || !this.creator) Software = "";
     else Software = `${this.name}/${this.version} by ${this.creator} using `;
 
-    return `${Software}${p.name}/${p.version} by ${p.author}`;
+    return `${Software}${p.name}/${p.version} by hokkqido`;
   }
 }
 
