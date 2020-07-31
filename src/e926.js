@@ -1,64 +1,50 @@
-const axios = require("axios");
-const util = require("../util");
+const p = require("phin");
+let Base = require("./Base");
+class E926 extends Base {
+  constructor(options) {
+    super(options);
+  }
 
-/**
- *
- * @param {String} request - The tags you want to search for
- * @param {Object} options -
- */
-const requests = async function(requestTags, { isCubAllowed = false }) {
-  let response = await axios
-    .get(`https://e926.net/posts.json`, {
-      headers: {
-        "user-agent": this.useragent || util.useragent()
-      },
-      params: {
-        limit: "1",
-        tags: requestTags + " order:random" + (isCubAllowed ? "" : " -young")
-      }
-    })
-    .catch(error => {
-      console.log(error.response);
+  async request(tags, cb) {
+    if (!tags) throw new Error("No Tags defined");
+    let res = await p({
+      parse: "json",
+      url: `https://e926.net/posts.json?limit=1&tags=order:random  rating:s type:png type:jpg ${tags}`,
+      method: "GET",
+      headers: { "User-Agent": this.ua },
     });
 
-  let posts = response.data["posts"][0];
+    let post = res.body.posts[0];
+    let artists;
+    let sources;
 
-  //console.log(posts);
+    if (!post)
+      throw new Error(
+        "There was no Image found with those Tags, please try again."
+      );
 
-  if (!posts) throw new Error("There was no Image found with those tags");
-  let artists;
-  if (posts.tags.artist.length === 0) artists = ["unknown_artist"];
-  else artists = posts.tags.artists;
+    if (post.tags.artist.length === 0) artists = ["unknown_artist"];
+    else artists = post.tags.artist;
 
-  return {
-    postID: posts.id,
-    page: `https://e926.net/posts/${posts.id}`,
-    tags: posts.tags,
-    sources: posts.sources,
-    score: posts.score,
-    fav_count: posts.fav_count,
-    artist: posts.tags.artist,
-    image: posts.file.url,
-    md5: posts.file.md5,
-    UA: util.useragent()
+    if (post.sources.length === 0) sources = ["unknown_source"];
+    else sources = post.souces;
 
-    // image: file_url
-  };
-};
-
-module.exports = async = {
-  setUserAgent: function(software) {
-    this.useragent = util.useragent(software);
-  },
-  /**
-   *
-   * @param {string} tags - The tags you want to search for | max 4
-   */
-  request: async function(tags) {
-    return await requests(tags, { isCubAllowed: true });
+    return {
+      id: post.id,
+      page: `https://e926.net/posts/${post.id}`,
+      tags: post.tags,
+      sources: post.sources,
+      score: post.score,
+      fav_count: post.fav_count,
+      artist: artists,
+      image: post.file.url,
+      md5: post.file.md5,
+      useragent: this.ua,
+    };
   }
-};
+  async get(tags) {
+    return await this.request(tags);
+  }
+}
 
-/*
-    API Wrapper written by @codepupper
-*/
+module.exports = E926;

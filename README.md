@@ -1,4 +1,4 @@
-# yiff | made by [codepupper](https://floofy.dev "my homepage")
+# yiff | made by [hokkqi](https://wrwlf.co "my homepage")
 
 [![NPM](https://nodei.co/npm/yiff.png)](https://nodei.co/npm/yiff/)
 
@@ -6,16 +6,12 @@ If you need Support or want more Information, join [my discord server](https://d
 
 ## ⭐️ Supported APIs
 
+- [x] furry.bot
 - [x] e621
 - [x] e926
-- [x] furry.bot
-- [x] randomfox.ca
-- [x] sheri.bot
 - [x] shibe.online
-
-<!-- ## 📝 Examples
-
-Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a link to the examples, once they're there") soon. -->
+- [x] sheri.bot
+- [ ] randomfox.ca
 
 ## ❗️ Requirements
 
@@ -30,7 +26,7 @@ Examples will be in [/examples](https://github.com/yiff/tree/master/examples "a 
 1. `cd path/to/your/project`
 2. Run `npm i yiff`
 
-This Module relies on [axios](https://npmjs.org/package/axios "A link to the axios package on npm") and [chalk](https://npmjs.org/package/chalk "A link to the chalk package on npm"), so if it doesn't work try to install them using `npm i axios && npm i chalk`
+This Module relies on [phin](https://npmjs.org/package/phin "A link to the phin package on npm") and [chalk](https://npmjs.org/package/chalk "A link to the chalk package on npm"), so if it doesn't work try to install them using `npm i phin && npm i chalk`
 
 ## ❓ FAQ
 
@@ -40,7 +36,3 @@ This Module relies on [axios](https://npmjs.org/package/axios "A link to the axi
 ## Contributing & Issues
 
 Feel free to make a Pull request and fix some things, otherwise just open a Issue or join [my discord server](https://discord.gg/He2822y) and let me know what you want added!
-
-## ❤️ Contributors
-+ [alexazf](https://github.com/alexazf) - refactoring the Sheri.js file
-+ [iDerp](https://github.com/iDerp) - Making the (now depricated) sheri.bot module
