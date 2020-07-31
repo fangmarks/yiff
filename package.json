@@ -1,12 +1,12 @@
 {
   "name": "yiff",
-  "version": "2.0.0b",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hokkqido/yiff.git"
+    "url": "git+https://github.com/hokkqi/yiff.git"
   },
   "keywords": [
     "yiff",
@@ -20,7 +20,7 @@
     "e926",
     "wrapper"
   ],
-  "author": "hokkqido",
+  "author": "hokkqi",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.0.0",
