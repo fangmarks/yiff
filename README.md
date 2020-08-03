@@ -28,6 +28,36 @@ If you need Support or want more Information, join [my discord server](https://d
 
 This Module relies on [phin](https://npmjs.org/package/phin "A link to the phin package on npm") and [chalk](https://npmjs.org/package/chalk "A link to the chalk package on npm"), so if it doesn't work try to install them using `npm i phin && npm i chalk`
 
+# Usage
+```js
+let yiff = require("yiff") // JS
+import yiff from "yiff" // TS
+
+// Initializing each API works the same.
+// Some, like Sheri, might require a API Key.
+
+// Each API can also customize your User-Agent 
+// if you follow the example below
+// but this is not required
+
+// the Default User-Agent is
+// yiff/<version> by hokkqi
+
+let config = { 
+  creator: "<Your Username>", 
+  name: "<Name of your Project>",
+  version: "<Version of your Project>"
+}
+let e9 = new yiff.e926(config)
+
+// After that, you can use async/await or .then() to request Images
+
+e9.request("<Your Tags>").then(r => console.log(r))
+
+```
+
+
+
 ## ❓ FAQ
 
 > **Q:** Will you add other APIs as well?\
