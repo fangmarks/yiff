@@ -11,7 +11,6 @@ If you need Support or want more Information, join [my discord server](https://d
 - [x] e926
 - [x] shibe.online
 - [x] sheri.bot
-- [ ] randomfox.ca
 
 ## ❗️ Requirements
 
@@ -30,8 +29,9 @@ This Module relies on [phin](https://npmjs.org/package/phin "A link to the phin 
 
 # Usage
 ```js
-let yiff = require("yiff") // JS
-import yiff from "yiff" // TS
+let yiff = require("yiff") 
+// or
+import yiff from "yiff"
 
 // Initializing each API works the same.
 // Some, like Sheri, might require a API Key.

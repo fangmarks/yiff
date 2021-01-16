@@ -5,7 +5,7 @@ const version = "V2";
 class FurryBot extends Base {
   constructor(options) {
     super(options);
-    this.API = `https://api.furry.bot/${version}`;
+    this.API = `https://yiff.rest/${version}`;
   }
   async request(endpoint, kind) {
     if (!endpoint) throw new Error("Endpoint not defined");
