@@ -1,6 +1,6 @@
 {
   "name": "yiff",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "API Wrapper for various Furry APIs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -23,6 +23,7 @@
   "author": "hokkqi",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "chalk": "^4.0.0",
     "phin": "^3.4.0"
   }

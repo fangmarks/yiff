@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "target": "esnext",
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "paths": {},
+    "typeRoots": ["./node_modules/@types", "./src/"],
+    "inlineSourceMap": true,
+    "strict": true,
+    "declaration": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": false
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules", "build", "out", "tmp", "logs", "test", "old"]
+}
