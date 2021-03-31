@@ -18,7 +18,7 @@ export default async function request(options:
         limit?: number,
         useragent?: string,
         animal?: string
-        kind?: string
+        category?: string
         endpoint?: string
     }
 ) {
@@ -69,7 +69,7 @@ export default async function request(options:
         case 'yiffrest':
             let yiffreq = await axios({
                 method: 'get',
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.yiffrest}` : c.direct.yiffrest,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.yiffrest}?` : `${c.direct.yiffrest}/${options.category}/${options.endpoint}`,
                 headers: {
                     "User-Agent": options.useragent,
                     // @ts-ignore
@@ -100,7 +100,7 @@ export default async function request(options:
         case 'floofy':
             let floofyreq = await axios({
                 method: 'get',
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.floofy}` : c.direct.floofy,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.floofy}` : `${c.direct.floofy}/yiff`,
                 headers: {
                     "User-Agent": options.useragent,
                 }
@@ -109,7 +109,8 @@ export default async function request(options:
         case 'shibe':
             let shibereq = await axios({
                 method: 'get',
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.shibe}` : c.direct.shibe,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.shibe}` :
+                `${c.direct.shibe}/${options.animal}?count=${options.limit}&urls=true&httpsUrls=true`,
                 headers: {
                     "User-Agent": options.useragent,
                 }

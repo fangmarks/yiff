@@ -49,6 +49,33 @@ export default class Yiff {
             console.error(error)
         }
     }
+    async yiffy(category:string, endpoint:string) {
+        try {
+            let res = await request({
+                site: "yiffrest",
+                category, endpoint,
+                useragent: this.useragent,
+                killswitch: this.killswitch,
+                apikey: this.config?.apikey?.yiffrest
+            })
+            return res
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    async floofy() {
+        try {
+            let res = await request({
+                site: "floofy",
+                useragent: this.useragent,
+                killswitch: this.killswitch,
+                // apikey: this.config?.apikey?.yiffrest
+            })
+            return res
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
 
 
