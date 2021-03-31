@@ -26,5 +26,8 @@
     "axios": "^0.21.1",
     "chalk": "^4.0.0",
     "phin": "^3.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
   }
 }
