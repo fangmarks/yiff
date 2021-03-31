@@ -57,7 +57,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           registry-url: "https://npm.pkg.github.com/"
-          scope: "@endbug"
+          scope: "@hokkqi"
 
       - name: Set up package for GPR # You need to make sure you package name has the scope needed for GPR
         if: steps.check.outputs.changed == 'true'
