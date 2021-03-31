@@ -2,64 +2,76 @@
 
 <!-- [![NPM](https://nodei.co/npm/yiff.png)](https://nodei.co/npm/yiff/) -->
 
+## **VERSION 3 IS A BREAKING CHANGE**
+
+### **\*Do not** update from v2 if your current code is still based on v2\*
+
 If you need Support or want more Information, join [my discord server](https://discord.gg/He2822y "a link to my discord server")
 
 ## ⭐️ Supported APIs
 
-- [x] furry.bot
-- [x] e621
-- [x] e926
-- [x] shibe.online
-- [x] sheri.bot
+- e621.net
+- e926.net
+- [yiff.rest](https://yiff.rest)
+- [sheri.bot](https://sheri.bot)
+- [shibe.online](https://shibe.online)
+- randomfox.ca
+- [api.floofy.dev](https://floofy.dev)
 
-## ❗️ Requirements
-
-▶️ [nodejs latest](https://nodejs.org/en/ "A link to the node.js website")
-
-`Optional/Paid`
-
-- [sheri.bot](https://sheri.bot/ "A link to the sheri.bot website") API Key
-
-## 📦 Installing
-
-1. `cd path/to/your/project`
-2. Run `npm i yiff`
-
-This Module relies on [phin](https://npmjs.org/package/phin "A link to the phin package on npm") and [chalk](https://npmjs.org/package/chalk "A link to the chalk package on npm"), so if it doesn't work try to install them using `npm i phin && npm i chalk`
+**Yiff, by default, uses the main [Killswitch Instance](https://yiff.click) as a Proxy for any Requests.**
 
 # Usage
 
-```js
-let yiff = require("yiff");
-// or
-import yiff from "yiff";
+```ts
+import Yiff from "yiff";
 
-// Initializing each API works the same.
-// Some, like Sheri, might require a API Key.
-
-// Each API can also customize your User-Agent
-// if you follow the example below
-// but this is not required
-
-// the Default User-Agent is
-// yiff/<version> by hokkqi
-
+// every object in the config is optional
 let config = {
-  creator: "<Your Username>",
-  name: "<Name of your Project>",
-  version: "<Version of your Project>",
-};
-let e9 = new yiff.e926(config);
+  useragent: `Project/version (website)`;
+    killswitch: {
+        enabled: true
+        instance: "https://yiff.click"
+    }
+    apikey: {
+        sheri: "<Your Token>";
+        yiffrest: "<Your Token>";
+        e621: "<Your Token>";
+        e926: "<Your Token>";
+    }
+}
+const yiff = new Yiff(config);
 
-// After that, you can use async/await or .then() to request Images
+let tags = "werewolf male/male"
+let limit = 1
+// Basically:
 
-e9.request("<Your Tags>").then((r) => console.log(r));
+yiff.e621(tags, limit).then((r) => {console.log("e621", r)})
+// => Unfiltered E621 Response
+
+yiff.e926(tags, limit).then((r) => {console.log("e926", r)})
+// => Unfiltered E926 Response
+
+yiff.yiffy('animals', 'birb').then((r) => {console.log("yiffy", r)})
+// => Unfiltered yiff.rest Response
+
+yiff.floofy().then((r) => {console.log("floofy", r)})
+// => Unfiltered api.floofy.dev Response
+
+yiff.sheri('paws').then((r) => {console.log("sheri", r)})
+// => Unfiltered sheri.bot Response
+
+yiff.shibe("shibes", 2).then((r) => {console.log("shibes", r)})
+// => Unfiltered shibe.online Response
+
+yiff.fox().then((r) => {console.log("fox", r)})
+// => Unfiltered randomfox.ca Response
+
 ```
 
 ## ❓ FAQ
 
 > **Q:** Will you add other APIs as well?\
-> **A:** Depends on if they're either free or I get an all-access token
+> **A:** Depends on if they're either free or I get an all-access token, as well as if there's proper documentation for the API
 
 ## Contributing & Issues
 
