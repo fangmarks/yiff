@@ -49,7 +49,7 @@ export default class Yiff {
             console.error(error)
         }
     }
-    async yiffy(category:string, endpoint:string) {
+    async yiffy(category: string, endpoint: string) {
         try {
             let res = await request({
                 site: "yiffrest",
@@ -63,13 +63,53 @@ export default class Yiff {
             console.error(error)
         }
     }
+    async sheri(endpoint: string) {
+        try {
+            let res = await request({
+                site: "sheri",
+                endpoint,
+                useragent: this.useragent,
+                killswitch: this.killswitch,
+                apikey: this.config?.apikey?.sheri
+            })
+            return res
+        } catch (error) {
+            console.error(error)
+        }
+    }
     async floofy() {
         try {
             let res = await request({
                 site: "floofy",
                 useragent: this.useragent,
                 killswitch: this.killswitch,
-                // apikey: this.config?.apikey?.yiffrest
+            })
+            return res
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    async shibe(animal: string, limit: number) {
+        try {
+            let res = await request({
+                site: "shibe",
+                animal, limit,
+                useragent: this.useragent,
+                killswitch: this.killswitch,
+
+            })
+            return res
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    async fox() {
+        try {
+            let res = await request({
+                site: "fox",
+                useragent: this.useragent,
+                killswitch: this.killswitch,
+
             })
             return res
         } catch (error) {

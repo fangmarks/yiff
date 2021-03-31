@@ -7,14 +7,14 @@ export default {
         floofy: "https://api.floofy.dev",
         shibe: "https://shibe.online/api/",
         fox: "https://randomfox.ca/floof/",
-        sheri: "https://sheri.bot/api/",
+        sheri: "https://sheri.bot/api",
 
     },
     killswitch: {
         e621: "/e6",
         e926: "/e9",
         yiffrest: "/yiffrest",
-        floofy: "/floofy",
+        floofy: "/floofydev",
         shibe: "/shibe",
         fox: "/fox",
         sheri: "/sheri",

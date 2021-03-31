@@ -28,11 +28,8 @@ export default async function request(options:
             if (!options.tags) throw Error("No Tags provided")
             let e6request = await axios({
                 method: 'get',
-                params: {
-                    limit: options.limit || 1,
-                    tags: `${options.tags.toString()}`,
-                },
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e621}` : c.direct.e621,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e621}?limit=${options.limit || 1}&tags=${options.tags}&useragent=${options.useragent}` :
+                    `${c.direct.e621}?tags=limit:${options.limit || 1} order:random -young ${options.tags.toString()}`,
                 headers: {
                     "User-Agent": options.useragent,
                     // @ts-ignore
@@ -43,16 +40,19 @@ export default async function request(options:
                 }
             })
 
-            return e6request.data
+            return e6request.data.posts
         case 'e926':
             if (!options.tags) throw Error("No Tags provided")
             let e9request = await axios({
+
                 method: 'get',
                 params: {
-                    limit: options.limit || 1,
-                    tags: `${options.tags.toString()}`,
+                    // limit: options.limit || 1,
+                    // tags: `${options.tags.toString()}`,
+                    // useragent: options.useragent
                 },
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e926}` : c.direct.e926,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e926}?limit=${options.limit || 1}&tags=${options.tags}&useragent=${options.useragent}` :
+                    `${c.direct.e926}?tags=limit:${options.limit || 1} order:random -young ${options.tags.toString()}`,
                 headers: {
                     "User-Agent": options.useragent,
                     // @ts-ignore
@@ -62,18 +62,31 @@ export default async function request(options:
                     } : {})
                 }
             })
-            return e9request.data
+            return e9request.data.posts
 
 
         case 'furrybot':
         case 'yiffrest':
+            let customMethod: any;
+            if (options.killswitch?.enabled) {
+                customMethod = "POST"
+            } else {
+                customMethod = "GET"
+            }
+
             let yiffreq = await axios({
-                method: 'get',
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.yiffrest}?` : `${c.direct.yiffrest}/${options.category}/${options.endpoint}`,
+                method: customMethod,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.yiffrest}` : `${c.direct.yiffrest}/${options.category}/${options.endpoint}`,
+                data: {
+                    category: options.category,
+                    endpoint: options.endpoint,
+                    apikey: options.apikey,
+                    useragent: options.useragent
+                },
                 headers: {
                     "User-Agent": options.useragent,
                     // @ts-ignore
-                    ...(options.apikey.yiffrest ? {
+                    ...(options.apikey?.yiffrest ? {
                         // @ts-ignore
                         "Authorization": options?.apikey?.yiffrest
                     } : {})
@@ -81,18 +94,22 @@ export default async function request(options:
             })
             return yiffreq.data
         case 'sheri':
+            if (options.apikey) {
+                // @ts-ignore
+                if (!options.apikey.startsWith('Token')) {
+                    // @ts-ignore
+                    options.apikey = `Token ${options.apikey}`
+                }
+            }
             let sherireq = await axios({
                 method: 'get',
-                params: {
-                    format: "json"
-                },
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.sheri}` : c.direct.sheri,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.sheri}?endpoint=${options.endpoint}${options.apikey ? `&apikey=${options.apikey}` : ""}` : `${c.direct.sheri}/${options.endpoint}?format=json`,
                 headers: {
                     "User-Agent": options.useragent,
                     // @ts-ignore
-                    ...(options.apikey.sheri ? {
+                    ...(options.apikey ? {
                         // @ts-ignore
-                        "Authorization": options?.apikey?.sheri
+                        "Authorization": options.apikey
                     } : {})
                 }
             })
@@ -107,10 +124,11 @@ export default async function request(options:
             })
             return floofyreq.data
         case 'shibe':
+
             let shibereq = await axios({
                 method: 'get',
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.shibe}` :
-                `${c.direct.shibe}/${options.animal}?count=${options.limit}&urls=true&httpsUrls=true`,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.shibe}?animal=${options.animal}&limit=${options.limit}` :
+                    `${c.direct.shibe}/${options.animal}?count=${options.limit}&urls=true&httpsUrls=true`,
                 headers: {
                     "User-Agent": options.useragent,
                 }
