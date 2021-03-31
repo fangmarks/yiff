@@ -21,6 +21,12 @@ export default class Yiff {
         }
     }
 
+    /**
+     * Request random posts from e621
+     * @param tags The Tags your want to use for your Search
+     * @param limit the amount of posts you want back
+     * @returns A Unfiltered e621 Response
+     */
     async e621(tags: string | string[], limit?: number) {
         try {
             let res = await request({
@@ -35,6 +41,13 @@ export default class Yiff {
             console.error(error)
         }
     }
+    /**
+     * Request random posts from e926
+     * @param tags The Tags your want to use for your Search
+     * @param limit the amount of posts you want back
+     * @returns A Unfiltered e926 Response
+     */
+
     async e926(tags: string | string[], limit?: number) {
         try {
             let res = await request({
@@ -49,6 +62,12 @@ export default class Yiff {
             console.error(error)
         }
     }
+    /**
+     * Request an Image from yiff.rest
+     * @param category the category you want an image from
+     * @param endpoint a valid endpoint of the category you want an image from
+     * @returns Unfiltered yiff.rest Response
+     */
     async yiffy(category: string, endpoint: string) {
         try {
             let res = await request({
@@ -63,6 +82,11 @@ export default class Yiff {
             console.error(error)
         }
     }
+    /**
+     * Request an Image from the Sheri.Bot API *(most endpoints require a API Key)*
+     * @param endpoint a valid endpoint you want an image from
+     * @returns Unfiltered sheri.bot Response
+     */
     async sheri(endpoint: string) {
         try {
             let res = await request({
@@ -77,6 +101,10 @@ export default class Yiff {
             console.error(error)
         }
     }
+    /**
+     * Request a random Image from api.floofy.dev (ALL NSFW)
+     * @returns Unfiltered api.floofy.dev Response
+     */
     async floofy() {
         try {
             let res = await request({
@@ -89,6 +117,12 @@ export default class Yiff {
             console.error(error)
         }
     }
+    /**
+     * Request a random Image from shibe.online
+     * @param animal the animal you want an image of
+     * @param limit the amount of images you want back
+     * @returns Unfiltered shibe.online Response
+     */
     async shibe(animal: string, limit: number) {
         try {
             let res = await request({
@@ -103,6 +137,10 @@ export default class Yiff {
             console.error(error)
         }
     }
+    /**
+     * Get a random fox from randomfox.ca
+     * @returns Unfiltered randomfox.ca Response
+     */
     async fox() {
         try {
             let res = await request({

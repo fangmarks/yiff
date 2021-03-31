@@ -10,10 +10,10 @@ export default async function request(options:
         },
         tags?: string | string[],
         apikey?: {
-            sheri?: string | undefined;
-            yiffrest?: string | undefined;
-            e621?: string | undefined;
-            e926?: string | undefined;
+            sheri?: string;
+            yiffrest?: string;
+            e621?: string;
+            e926?: string;
         }
         limit?: number,
         useragent?: string,
