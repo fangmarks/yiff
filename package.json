@@ -1,7 +1,7 @@
 {
   "name": "yiff",
   "version": "3.0.2",
-  "description": "API Wrapper for various Furry APIs",
+  "description": "Wrapper for various Furry APIs",
   "main": "build/index.js",
   "types": "index.d.ts",
   "repository": {
