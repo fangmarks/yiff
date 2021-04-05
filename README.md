@@ -1,6 +1,6 @@
 # yiff by [Lio](https://wrwlf.co "my homepage")
 
-<!-- [![NPM](https://nodei.co/npm/yiff.png)](https://nodei.co/npm/yiff/) -->
+[![NPM](https://nodei.co/npm/yiff.png)](https://nodei.co/npm/yiff/)
 
 ## **VERSION 3 IS A BREAKING CHANGE**
 
@@ -17,6 +17,7 @@ If you need Support or want more Information, join [my discord server](https://d
 - [shibe.online](https://shibe.online)
 - randomfox.ca
 - [api.floofy.dev](https://floofy.dev)
+- [gelbooru.com](https://gelbooru.com)
 
 **Yiff, by default, uses the main [Killswitch Instance](https://yiff.click) as a Proxy for any Requests.**
 
