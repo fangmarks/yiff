@@ -42,6 +42,26 @@ export default class Yiff {
         }
     }
     /**
+     * Request random posts from gelbooru
+     * @param tags The Tags your want to use for your Search
+     * @param limit the amount of posts you want back
+     * @returns A Unfiltered e621 Response
+     */
+    async gelbooru(tags: string | string[], limit?: number) {
+        try {
+            let res = await request({
+                site: "gelbooru",
+                limit, tags,
+                useragent: this.useragent,
+                killswitch: this.killswitch,
+
+            })
+            return res
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    /**
      * Request random posts from e926
      * @param tags The Tags your want to use for your Search
      * @param limit the amount of posts you want back

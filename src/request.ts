@@ -3,7 +3,7 @@ import defaults from "defaults";
 import c from "./consts";
 export default async function request(options:
     {
-        site: string,
+        site: "e621" | "e926" | "gelbooru" | "furrybot" | "yiffrest" | "floofy" | "sheri" | "fox" | "shibe",
         killswitch?: {
             enabled?: boolean,
             instance?: string
@@ -46,11 +46,6 @@ export default async function request(options:
             let e9request = await axios({
 
                 method: 'get',
-                params: {
-                    // limit: options.limit || 1,
-                    // tags: `${options.tags.toString()}`,
-                    // useragent: options.useragent
-                },
                 url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e926}?limit=${options.limit || 1}&tags=${options.tags}&useragent=${options.useragent}` :
                     `${c.direct.e926}?tags=limit:${options.limit || 1} order:random -young ${options.tags.toString()}`,
                 headers: {
@@ -63,6 +58,22 @@ export default async function request(options:
                 }
             })
             return e9request.data.posts
+        case 'gelbooru':
+            if (!options.tags) throw Error("No Tags provided")
+            let gelboorureq = await axios({
+                method: 'get',
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.gelbooru}?limit=${options.limit || 1}&tags=${options.tags}&useragent=${options.useragent}` :
+                    `${c.direct.gelbooru}/index.php?page=dapi&s=post&json=1&q=index&limit=${Number(options.limit) || 1}&tags=sort:random+${options.tags.toString().split(' ').join("+")}`,
+                headers: {
+                    "User-Agent": options.useragent,
+                    // @ts-ignore
+                    // ...(options?.apikey?.e926 ? {
+                    //     // @ts-ignore
+                    //     "Authorization": options?.apikey?.e926
+                    // } : {})
+                }
+            })
+            return gelboorureq.data
 
 
         case 'furrybot':

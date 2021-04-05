@@ -8,6 +8,7 @@ export default {
         shibe: "https://shibe.online/api/",
         fox: "https://randomfox.ca/floof/",
         sheri: "https://sheri.bot/api",
+        gelbooru: "https://gelbooru.com/"
 
     },
     killswitch: {
@@ -18,6 +19,7 @@ export default {
         shibe: "/shibe",
         fox: "/fox",
         sheri: "/sheri",
+        gelbooru: "/gel",
 
     }
 
