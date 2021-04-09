@@ -1,5 +1,4 @@
 import axios from "axios"
-import defaults from "defaults";
 import c from "./consts";
 export default async function request(options:
     {
