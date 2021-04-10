@@ -3,7 +3,7 @@ export default {
     direct: {
         e621: "https://e621.net/posts.json",
         e926: "https://e926.net/posts.json",
-        yiffrest: "https://yiff.rest/V2",
+        yiffrest: "https://v2.yiff.rest/",
         floofy: "https://api.floofy.dev",
         shibe: "https://shibe.online/api/",
         fox: "https://randomfox.ca/floof/",
