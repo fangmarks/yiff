@@ -1,6 +1,6 @@
 {
   "name": "yiff",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Wrapper for various Furry APIs",
   "main": "build/index.js",
   "types": "index.d.ts",
@@ -24,8 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
-    "chalk": "^4.0.0",
-    "phin": "^3.4.0"
+    "chalk": "^4.0.0"
   },
   "devDependencies": {
     "typescript": "^4.2.3"
