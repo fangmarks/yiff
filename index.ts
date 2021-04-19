@@ -174,7 +174,25 @@ export default class Yiff {
             console.error(error)
         }
     }
-
+    /**
+     * Request an Image from Thaldr.in's API *(Endpoints require an API Key)*
+     * @param endpoint a valid endpoint you want an image from
+     * @returns Unfiltered thaldr.in/api Response
+     */
+    async thaldrin(endpoint: string) {
+        try {
+            let res = await request({
+                site: "thaldrin",
+                endpoint,
+                useragent: this.useragent,
+                killswitch: this.killswitch,
+                apikey: this.config?.apikey?.thaldrin
+            })
+            return res
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
 
 }

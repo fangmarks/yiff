@@ -29,6 +29,10 @@ export type config = {
          */
         sheri?: string;
         /**
+         * API Key for sheri.bot
+         */
+        thaldrin?: string;
+        /**
          * API Key for yiff.rest
          */
         yiffrest?: string;

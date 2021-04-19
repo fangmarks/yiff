@@ -6,6 +6,7 @@ export default {
         yiffrest: "https://v2.yiff.rest/",
         floofy: "https://api.floofy.dev",
         shibe: "https://shibe.online/api/",
+        thaldrin: "https://thaldr.in/api/v1",
         fox: "https://randomfox.ca/floof/",
         sheri: "https://sheri.bot/api",
         gelbooru: "https://gelbooru.com/"
@@ -20,6 +21,7 @@ export default {
         fox: "/fox",
         sheri: "/sheri",
         gelbooru: "/gel",
+        thaldrin: "/thaldrin",
 
     }
 

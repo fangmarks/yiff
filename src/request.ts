@@ -2,7 +2,7 @@ import axios from "axios"
 import c from "./consts";
 export default async function request(options:
     {
-        site: "e621" | "e926" | "gelbooru" | "furrybot" | "yiffrest" | "floofy" | "sheri" | "fox" | "shibe",
+        site: "e621" | "e926" | "gelbooru" | "furrybot" | "yiffrest" | "floofy" | "sheri" | "fox" | "shibe" | "thaldrin",
         killswitch?: {
             enabled?: boolean,
             instance?: string
@@ -153,6 +153,20 @@ export default async function request(options:
                 }
             })
             return randomfoxreq.data
+        case 'thaldrin':
+            let thaldrinreq = await axios({
+                method: 'get',
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.thaldrin}?endpoint=${options.endpoint}${options.apikey ? `&apikey=${options.apikey}` : ""}` : `${c.direct.thaldrin}/categories/${options.endpoint}`,
+                headers: {
+                    "User-Agent": options.useragent,
+                    // @ts-ignore
+                    ...(options.apikey ? {
+                        // @ts-ignore
+                        "Authorization": options.apikey
+                    } : {})
+                }
+            })
+            return thaldrinreq.data
 
 
         default:
