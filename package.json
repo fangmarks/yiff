@@ -8,6 +8,10 @@
     "type": "git",
     "url": "git+https://github.com/hokkqi/yiff.git"
   },
+  "scripts": {
+    "build": "rm -rf build/ && tsc",
+    "dev": "nodemon --ignore \"build/\" -e js,ts --exec \"npm run build && ts-node test.ts\""
+  },
   "keywords": [
     "yiff",
     "furry",

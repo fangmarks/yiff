@@ -19,5 +19,14 @@
     "strictPropertyInitialization": false
   },
   "include": ["**/*"],
-  "exclude": ["node_modules", "build", "out", "tmp", "logs", "test", "old"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "out",
+    "tmp",
+    "logs",
+    "test",
+    "old",
+    "test.ts"
+  ]
 }
