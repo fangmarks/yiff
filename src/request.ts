@@ -39,7 +39,7 @@ export default async function request(options:
                 }
             })
 
-            return e6request.data.posts
+            return e6request.data
         case 'e926':
             if (!options.tags) throw Error("No Tags provided")
             let e9request = await axios({
@@ -56,7 +56,7 @@ export default async function request(options:
                     } : {})
                 }
             })
-            return e9request.data.posts
+            return e9request.data
         case 'gelbooru':
             if (!options.tags) throw Error("No Tags provided")
             let gelboorureq = await axios({
