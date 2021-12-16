@@ -3,10 +3,12 @@
 [![NPM](https://nodei.co/npm/yiff.png)](https://nodei.co/npm/yiff/)
 
 ## **VERSION 3 IS A BREAKING CHANGE**
+## NodeJS V14 or higher is required!
 
 ### **\*Do not** update from v2 if your current code is still based on v2\*
 
 If you need Support or want more Information, join [my discord server](https://discord.gg/He2822y "a link to my discord server")
+
 
 ## ⭐️ Supported APIs
 
