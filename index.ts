@@ -197,3 +197,4 @@ export default class Yiff {
 
 }
 
+module.exports = Yiff
