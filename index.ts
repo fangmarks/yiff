@@ -5,7 +5,7 @@ import { config } from "./src/types";
 import consts from "./src/consts";
 import request from "./src/request";
 
-export default class Yiff {
+class Yiff {
     private config: config
     private useragent: string
     private killswitch: { enabled: boolean, instance: string }
@@ -197,3 +197,5 @@ export default class Yiff {
 
 }
 
+module.exports = Yiff
+export default Yiff
