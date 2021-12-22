@@ -1,0 +1,46 @@
+name: Publish
+on: release
+
+jobs:
+  compile:
+    name: Compile latest Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: install node v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: yarn install
+        run: yarn install
+      - name: tsc
+        uses: icrawl/action-tsc@v1
+
+  publish:
+    name: Publish to NPM
+    runs-on: ubuntu-latest
+    # if: contains(github.ref, 'master') # Publish it only if the push comes from the master branch
+    needs: compile # We need to wait for the build to be committed before publishing
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Set up Node.js for NPM
+        uses: actions/setup-node@v1
+        with:
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: TSC / Compile Again
+        uses: icrawl/action-tsc@v1
+
+      - name: Release
+        if: ${{ !env.ACT}}
+        uses: ph-fritche/action-release@v1
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
