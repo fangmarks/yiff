@@ -44,6 +44,6 @@ jobs:
 
       - name: Release
         if: ${{ !env.ACT}}
-        uses: ph-fritche/action-release@v1
+        uses: ph-fritsche/action-release@v1
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
