@@ -37,7 +37,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
-        run: npm install --only=production
+        run: npm install
 
       - name: TSC / Compile Again
         uses: icrawl/action-tsc@v1
