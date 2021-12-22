@@ -18,6 +18,7 @@ If you need Support or want more Information, join [my discord server](https://d
 - randomfox.ca
 - [api.floofy.dev](https://floofy.dev)
 - [gelbooru.com](https://gelbooru.com)
+- [thaldr.in](https://thaldr.in)
 
 **Yiff, by default, uses the main [Killswitch Instance](https://yiff.click) as a Proxy for any Requests.**
 
@@ -67,6 +68,8 @@ yiff.shibe("shibes", 2).then((r) => {console.log("shibes", r)})
 yiff.fox().then((r) => {console.log("fox", r)})
 // => Unfiltered randomfox.ca Response
 
+yiff.thaldrin("categories/foxes").then((r) => {console.log("thaldrin", r)})
+// => Unfiltered thaldr.in Response
 ```
 
 ## ❓ FAQ
