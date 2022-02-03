@@ -1,4 +1,4 @@
 test/
 node_modules/
-test.ts
+test.*
 build/
