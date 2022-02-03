@@ -197,5 +197,5 @@ class Yiff {
 
 }
 
-module.exports = Yiff
-export default Yiff
+Yiff.default = Yiff;
+export = Yiff;
