@@ -27,11 +27,11 @@ class Yiff {
      * @param limit the amount of posts you want back
      * @returns A Unfiltered e621 Response
      */
-    async e621(tags: string | string[], limit?: number) {
+    async e621(tags: string | string[], limit?: number, page?: number) {
         try {
             let res = await request({
                 site: "e621",
-                limit, tags,
+                limit, tags, page,
                 useragent: this.useragent,
                 killswitch: this.killswitch,
                 apikey: this.config?.apikey?.e621
@@ -68,11 +68,11 @@ class Yiff {
      * @returns A Unfiltered e926 Response
      */
 
-    async e926(tags: string | string[], limit?: number) {
+    async e926(tags: string | string[], limit?: number, page?: number) {
         try {
             let res = await request({
                 site: "e926",
-                limit, tags,
+                limit, tags, page,
                 useragent: this.useragent,
                 killswitch: this.killswitch,
                 apikey: this.config?.apikey?.e926
