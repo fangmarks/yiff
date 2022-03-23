@@ -15,6 +15,7 @@ export default async function request(options:
             e926?: string;
         }
         limit?: number,
+        page?: number,
         useragent?: string,
         animal?: string
         category?: string
@@ -25,10 +26,11 @@ export default async function request(options:
     switch (options.site) {
         case 'e621':
             if (!options.tags) throw Error("No Tags provided")
+            if (options.page && options.page > 750) throw Error("You cannot go beyond page 750")
             let e6request = await axios({
                 method: 'get',
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e621}?limit=${options.limit || 1}&tags=${options.tags}&useragent=${options.useragent}` :
-                    `${c.direct.e621}?tags=limit:${options.limit || 1} order:random -young ${options.tags.toString()}`,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e621}?limit=${options.limit || 1}&page=${options.page || 1}&tags=${options.tags}&useragent=${options.useragent}` :
+                    `${c.direct.e621}?page=${options.page || 1}&tags=limit:${options.limit || 1} order:random -young ${options.tags.toString()}`,
                 headers: {
                     "User-Agent": options.useragent,
                     // @ts-ignore
@@ -42,11 +44,12 @@ export default async function request(options:
             return e6request.data
         case 'e926':
             if (!options.tags) throw Error("No Tags provided")
+            if (options.page && options.page > 750) throw Error("You cannot go beyond page 750")
             let e9request = await axios({
 
                 method: 'get',
-                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e926}?limit=${options.limit || 1}&tags=${options.tags}&useragent=${options.useragent}` :
-                    `${c.direct.e926}?tags=limit:${options.limit || 1} order:random -young ${options.tags.toString()}`,
+                url: options.killswitch?.enabled ? `${options.killswitch.instance}${c.killswitch.e926}?limit=${options.limit || 1}&page=${options.page || 1}&tags=${options.tags}&useragent=${options.useragent}` :
+                    `${c.direct.e926}?page=${options.page || 1}&tags=limit:${options.limit || 1} order:random -young ${options.tags.toString()}`,
                 headers: {
                     "User-Agent": options.useragent,
                     // @ts-ignore

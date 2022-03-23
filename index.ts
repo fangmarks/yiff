@@ -25,13 +25,14 @@ class Yiff {
      * Request random posts from e621
      * @param tags The Tags your want to use for your Search
      * @param limit the amount of posts you want back
+     * @param page the page you want to request
      * @returns A Unfiltered e621 Response
      */
-    async e621(tags: string | string[], limit?: number) {
+    async e621(tags: string | string[], limit?: number, page?: number) {
         try {
             let res = await request({
                 site: "e621",
-                limit, tags,
+                limit, tags, page,
                 useragent: this.useragent,
                 killswitch: this.killswitch,
                 apikey: this.config?.apikey?.e621
@@ -65,14 +66,15 @@ class Yiff {
      * Request random posts from e926
      * @param tags The Tags your want to use for your Search
      * @param limit the amount of posts you want back
+     * @param page the page you want to request
      * @returns A Unfiltered e926 Response
      */
 
-    async e926(tags: string | string[], limit?: number) {
+    async e926(tags: string | string[], limit?: number, page?: number) {
         try {
             let res = await request({
                 site: "e926",
-                limit, tags,
+                limit, tags, page,
                 useragent: this.useragent,
                 killswitch: this.killswitch,
                 apikey: this.config?.apikey?.e926
