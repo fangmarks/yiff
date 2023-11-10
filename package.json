@@ -27,7 +27,7 @@
   "author": "hokkqi",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.4",
+    "axios": "^1.6.0",
     "chalk": "^4.0.0"
   },
   "devDependencies": {
