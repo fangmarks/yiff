@@ -1,4 +1,4 @@
-import { YiffConfig, YiffRequestSites } from "./utils/types.ts";
+import { type YiffConfig, YiffRequestSites } from "./utils/types.ts";
 import pkg from "../deno.json" with { type: "json" };
 import request from "./utils/request.ts";
 
