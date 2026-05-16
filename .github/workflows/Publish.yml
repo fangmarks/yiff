@@ -44,7 +44,7 @@ jobs:
       - uses: denoland/setup-deno@v2
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           registry-url: "https://registry.npmjs.org"
       - name: Build NPM package
         run: deno run -A scripts/build_npm.ts ${GITHUB_REF_NAME#v}
