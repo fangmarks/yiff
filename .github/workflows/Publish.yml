@@ -6,8 +6,25 @@ on:
       - "v*"
 
 jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+      - name: Run tests
+        run: deno task test
+        env:
+          E621_API_KEY: ${{ secrets.E621_API_KEY }}
+          E926_API_KEY: ${{ secrets.E926_API_KEY }}
+          DANBOORU_API_KEY: ${{ secrets.DANBOORU_API_KEY }}
+          YIFFREST_API_KEY: ${{ secrets.YIFFREST_API_KEY }}
+          GELBOORU_API_KEY: ${{ secrets.GELBOORU_API_KEY }}
+          GELBOORU_USER_ID: ${{ secrets.GELBOORU_USER_ID }}
+
   publish-jsr:
     name: Publish to JSR
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -19,6 +36,7 @@ jobs:
 
   publish-npm:
     name: Publish to NPM
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

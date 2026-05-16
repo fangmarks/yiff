@@ -47,7 +47,7 @@ class Yiff {
    * @param opts.page - Page number, max 750.
    * @param opts.limit - Number of posts to return.
    */
-  e621(tags: string, opts: { page?: number; limit?: number } = {}) {
+  e621(tags: string, opts: { page?: number; limit?: number } = {}): Promise<unknown> {
     return request({ that: this, site: YiffRequestSites.E621, tags, ...opts });
   }
 
@@ -61,7 +61,7 @@ class Yiff {
    * @param opts.page - Page number, max 750.
    * @param opts.limit - Number of posts to return.
    */
-  e926(tags: string, opts: { page?: number; limit?: number } = {}) {
+  e926(tags: string, opts: { page?: number; limit?: number } = {}): Promise<unknown> {
     return request({ that: this, site: YiffRequestSites.E926, tags, ...opts });
   }
 
@@ -75,7 +75,7 @@ class Yiff {
    * @param opts.page - Page number, max 750.
    * @param opts.limit - Number of posts to return.
    */
-  danbooru(tags: string, opts: { page?: number; limit?: number } = {}) {
+  danbooru(tags: string, opts: { page?: number; limit?: number } = {}): Promise<unknown> {
     return request({ that: this, site: YiffRequestSites.DANBOORU, tags, ...opts });
   }
 
@@ -88,7 +88,7 @@ class Yiff {
    * @param tags - Space-separated tag query (e.g. `"fox_girl solo"`).
    * @param opts.limit - Number of posts to return.
    */
-  gelbooru(tags: string, opts: { limit?: number } = {}) {
+  gelbooru(tags: string, opts: { limit?: number } = {}): Promise<unknown> {
     return request({ that: this, site: YiffRequestSites.GELBOORU, tags, ...opts });
   }
 
@@ -102,7 +102,7 @@ class Yiff {
    * @param category - Category identifier (e.g. `"furry.sfw"`). See `/categories` for the full list.
    * @param opts.limit - Number of images to return (1–5).
    */
-  yiffrest(category: string, opts: { limit?: number } = {}) {
+  yiffrest(category: string, opts: { limit?: number } = {}): Promise<unknown> {
     return request({ that: this, site: YiffRequestSites.YIFFREST, category, ...opts });
   }
 
@@ -111,7 +111,7 @@ class Yiff {
    *
    * No authentication or parameters required.
    */
-  fox() {
+  fox(): Promise<unknown> {
     return request({ that: this, site: YiffRequestSites.FOX });
   }
 }
