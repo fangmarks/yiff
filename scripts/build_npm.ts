@@ -2,6 +2,8 @@ import { build, emptyDir } from "@deno/dnt";
 
 await emptyDir("./npm_dist");
 
+const runTests = Deno.args.includes("--test");
+
 await build({
   entryPoints: ["./src/mod.ts"],
   outDir: "./npm_dist",
@@ -30,4 +32,5 @@ await build({
     Deno.copyFileSync("LICENSE", "npm_dist/LICENSE");
     Deno.copyFileSync("README.md", "npm_dist/README.md");
   },
+  test: runTests,
 });
