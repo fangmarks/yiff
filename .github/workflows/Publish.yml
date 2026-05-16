@@ -39,6 +39,7 @@ jobs:
     name: Publish to NPM
     needs: test
     runs-on: ubuntu-latest
+    environment: Runners
     permissions:
       contents: read
       id-token: write
