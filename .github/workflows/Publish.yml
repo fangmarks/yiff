@@ -49,6 +49,6 @@ jobs:
       - name: Build NPM package
         run: deno run -A scripts/build_npm.ts ${GITHUB_REF_NAME#v}
       - name: Publish
-        run: npm publish ./npm_dist --access public
+        run: npm publish ./npm_dist --access public --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
