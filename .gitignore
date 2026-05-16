@@ -1,4 +1,4 @@
-test/
-node_modules/
-test.*
-build/
+npm_dist/
+.env
+.DS_Store
+.vscode/
