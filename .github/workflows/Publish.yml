@@ -9,6 +9,7 @@ jobs:
   test:
     name: Run tests
     runs-on: ubuntu-latest
+    environment: Runners
     steps:
       - uses: actions/checkout@v4
       - uses: denoland/setup-deno@v2
